@@ -1,6 +1,6 @@
 # How to start
 
-> 1. Clone
+> 1. Clone or Download
 
 > 2. Build Setup
 
