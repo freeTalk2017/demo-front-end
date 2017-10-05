@@ -5,12 +5,12 @@
     <router-view name="BestSale"></router-view>
     <router-view name="RecomList"></router-view>
     <router-view name="HomeFooter"></router-view>
-    <router-view name="ToTop"></router-view>
     <router-view name="DetailHeader"></router-view>
     <router-view name="DetailSlider"></router-view>
     <router-view name="DetailBasic"></router-view>
     <router-view name="SpecificSelection"></router-view>
     <router-view name="DetailFooter"></router-view>
+    <router-view name="ToTop"></router-view>
   </div>
 </template>
 
