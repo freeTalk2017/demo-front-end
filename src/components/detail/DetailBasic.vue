@@ -4,7 +4,7 @@
 		<div class="desc-wrap">{{desc}}</div>
 		<div class="price-group">
 			<div class="price-wrap">¥{{price}}</div>
-			<div v-if="discount" class="origin-wrap">¥{{originPrice}}</div>
+			<div v-if="originPrice" class="origin-wrap">¥{{originPrice}}</div>
 		</div>		
 	</div>
 </template>
@@ -16,7 +16,6 @@ export default {
       name: '名字名字我是名字',
       desc: '描述描述我是描述',
       price: '998.00',
-      discount: true,
       originPrice: '233.33'
     }
   }

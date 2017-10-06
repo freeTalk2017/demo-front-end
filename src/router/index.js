@@ -7,6 +7,10 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      redirect: '/homepage'
+    },
+    {
       path: '/homepage',
       components: {
         HomeHeader: resolve => { require(['@/components/home/HomeHeader'], resolve) },
@@ -25,6 +29,8 @@ export default new Router({
         DetailFooter: resolve => { require(['@/components/detail/DetailFooter'], resolve) },
         DetailBasic: resolve => { require(['@/components/detail/DetailBasic'], resolve) },
         SpecificSelection: resolve => { require(['@/components/detail/SpecificSelection'], resolve) },
+        AttrSection: resolve => { require(['@/components/detail/AttrSection'], resolve) },
+        DetailImg: resolve => { require(['@/components/detail/DetailImg'], resolve) },
         ToTop
       }
     }

@@ -10,6 +10,8 @@
     <router-view name="DetailBasic"></router-view>
     <router-view name="SpecificSelection"></router-view>
     <router-view name="DetailFooter"></router-view>
+    <router-view name="AttrSection"></router-view>
+    <router-view name="DetailImg"></router-view>
     <router-view name="ToTop"></router-view>
   </div>
 </template>
@@ -54,6 +56,10 @@ export default {
   height: .53333rem;
 }
 
+.left-padding {
+  padding-left: 0.4rem;
+}
+
 ul {
   padding-left: .10667rem;;
 }
@@ -66,6 +72,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f4f4f4;
+  word-break: break-word;
 }
 
 .div-wrap {

@@ -1,5 +1,5 @@
 <template>
-	<div class="div-wrap selec-wrap">
+	<div class="div-wrap selec-wrap left-padding">
 		<div class="txt-wrap">
 			<span>请选择规格数量</span>
 		</div>
@@ -9,7 +9,6 @@
 
 <style scoped>
 .selec-wrap {
-	padding-left: 0.4rem;
 	position: relative;
 	display: flex;
 	height: 1.18667rem;

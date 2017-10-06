@@ -1,6 +1,6 @@
 <template>
-	<div class="toTop" v-on:click="goTop" v-show="toTop">
-		<i class="topIcon inner-img"></i>
+	<div class="to-top" v-on:click="goTop" v-show="toTop">
+		<i class="top-icon inner-img"></i>
 	</div>
 </template>
 
@@ -44,12 +44,12 @@ module.exports = {
 </script>
 
 <style scoped>
-.toTop {
+.to-top {
 	background-color: #fff;
   z-index: 10;
 }
 
-.topIcon {
+.top-icon {
 	position: fixed;
 	right: .30667rem;
 	bottom: 1.6rem;
@@ -58,6 +58,6 @@ module.exports = {
 	background-image: url(../../assets/common/top.png);
 	background-repeat: no-repeat;
   background-size: 100% 100%;
-  opacity: .7;
+  opacity: .8;
 }
 </style>
