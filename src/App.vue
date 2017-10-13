@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view name="HomeHeader"></router-view>
-    <router-view name="HomeSlider"></router-view>
+    <!-- <router-view name="HomeSlider"></router-view> -->
     <router-view name="BestSale"></router-view>
     <router-view name="RecomList"></router-view>
     <router-view name="HomeFooter"></router-view>

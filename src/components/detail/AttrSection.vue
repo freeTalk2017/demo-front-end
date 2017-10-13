@@ -5,10 +5,10 @@
 		</div>
 		<div v-for="attr in attrList" class="attr-list">
 			<div class="attr-title">
-				{{attr.title}}
+				{{attr.attrTitle}}
 			</div>
 			<div class="attr-info">
-				{{attr.info}}
+				{{attr.attrInfo}}
 			</div>
 		</div>
 	</div>	
@@ -20,20 +20,20 @@ module.exports = {
     return {
       attrList: [
         {
-          title: 'title1',
-          info: '详细参数1'
+          attrTitle: 'title1',
+          attrInfo: '详细参数1'
         },
         {
-          title: 'title2title2title2title2',
-          info: '详细参数2'
+          attrTitle: 'title2title2title2title2',
+          attrInfo: '详细参数2'
         },
         {
-          title: 'title3',
-          info: '详细参数3'
+          attrTitle: 'title3',
+          attrInfo: '详细参数3'
         },
         {
-          title: 'title4',
-          info: '详细参数4详细参数详细参数详细4参数详4细参数4详细'
+          attrTitle: 'title4',
+          attrInfo: '详细参数4详细参数详细参数详细4参数详4细参数4详细'
         }
       ]
     }

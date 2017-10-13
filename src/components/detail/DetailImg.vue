@@ -2,7 +2,7 @@
 	<div class="div-wrap">
 		<div class="img-head">商品图片</div>
 		<div v-for="item in imgList" class="img-wrap">
-			<img v-lazy="item.image" class="inner-img">
+			<img v-lazy="item.picURL" class="inner-img">
 		</div>
 	</div>
 </template>
@@ -13,22 +13,22 @@ module.exports = {
     return {
       imgList: [
         {
-          image: 'https://dummyimage.com/980x980/3f51b5/ffffff'
+          picURL: 'https://dummyimage.com/980x980/3f51b5/ffffff'
         },
         {
-          image: 'https://dummyimage.com/980x490/9c27b0/ffffff'
+          picURL: 'https://dummyimage.com/980x490/9c27b0/ffffff'
         },
         {
-          image: 'https://dummyimage.com/980x245/f44336/ffffff'
+          picURL: 'https://dummyimage.com/980x245/f44336/ffffff'
         },
         {
-          image: 'https://dummyimage.com/490x490/cddc39/ffffff'
+          picURL: 'https://dummyimage.com/490x490/cddc39/ffffff'
         },
         {
-          image: 'https://dummyimage.com/200x100/607d8b/ffffff'
+          picURL: 'https://dummyimage.com/200x100/607d8b/ffffff'
         },
         {
-          image: 'https://dummyimage.com/1000x2000/00bcd4/ffffff'
+          picURL: 'https://dummyimage.com/1000x2000/00bcd4/ffffff'
         }
       ]
     }
