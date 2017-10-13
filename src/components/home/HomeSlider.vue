@@ -9,20 +9,24 @@ import paginationSlider from '@/components/common/SliderTemplate'
 export default {
   data: function () {
     return {
-      slideList: [
-        {
-          'clickUrl': '/',
-          'image': 'static/img/serial/serial_a_slider.jpg'
-        },
-        {
-          'clickUrl': '/',
-          'image': 'static/img/serial/serial_b_slider.jpg'
-        },
-        {
-          'clickUrl': '/',
-          'image': 'static/img/serial/serial_c_slider.jpg'
-        }
-      ]
+      slideList: [],
+      apiUrl: '/homeslider'
+    }
+  },
+  mounted: function () {
+    this.getSliderList()
+  },
+  methods: {
+    getSliderList: function () {
+      this.$http.get(this.apiUrl)
+        .then((response) => {
+          // this.$set('slideList', JSON.parse(response.data))
+          this.slideList = response.data
+          console.log(this.slideList)
+        })
+        .catch((response) => {
+          console.log(response)
+        })
     }
   },
   components: {paginationSlider}

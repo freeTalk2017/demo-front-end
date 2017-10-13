@@ -2,10 +2,10 @@
   <div ref="swipe" class="wipe bar-slider">
     <div class='swipe-wrap'>
         <div v-for="item in slideList">
-          <router-link v-if="type === 'redi'" :to="item.clickUrl">
-            <img :src="item.image" >
+          <router-link v-if="type === 'redi'" :to="item.clickURL">
+            <img :src="item.picURL" >
           </router-link>
-          <img v-else :src="item.image" >
+          <img v-else :src="item.picURL" >
         </div>
     </div>
 
@@ -30,10 +30,10 @@ export default {
   mounted: function () {
     var self = this
     var slides = self.$refs.swipe.getElementsByClassName('swipe-pagination-switch')
-    slides[0].style.opacity = '0.8'
-    slides[0].style.background = '#b2b2b2'
-    slides[0].style.width = '0.53333rem'
-    slides[0].style.borderRadius = '15%'
+    // slides[0].style.opacity = '0.8'
+    // slides[0].style.background = '#b2b2b2'
+    // slides[0].style.width = '0.53333rem'
+    // slides[0].style.borderRadius = '15%'
     self.mySwipe = new Swipe(self.$refs.swipe, {
       startSlide: 0,
       continuous: this.loop,

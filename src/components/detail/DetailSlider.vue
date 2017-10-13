@@ -11,13 +11,13 @@ export default {
     return {
       slideList: [
         {
-          'image': 'https://dummyimage.com/980x980/54bff0/ffffff'
+          'picURL': 'https://dummyimage.com/980x980/54bff0/ffffff'
         },
         {
-          'image': 'https://dummyimage.com/980x980/ffa273/ffffff'
+          'picURL': 'https://dummyimage.com/980x980/ffa273/ffffff'
         },
         {
-          'image': 'https://dummyimage.com/980x980/89d68e/ffffff'
+          'picURL': 'https://dummyimage.com/980x980/89d68e/ffffff'
         }
       ]
     }
