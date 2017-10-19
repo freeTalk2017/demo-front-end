@@ -10,19 +10,17 @@ export default {
   data: function () {
     return {
       slideList: [],
-      apiUrl: '/homeslider'
+      apiUrl: this.$api + '/homepage/serials/sliders'
     }
   },
   mounted: function () {
-    this.getSliderList()
+    this.getSlideList()
   },
   methods: {
-    getSliderList: function () {
+    getSlideList: function () {
       this.$http.get(this.apiUrl)
         .then((response) => {
-          // this.$set('slideList', JSON.parse(response.data))
           this.slideList = response.data
-          console.log(this.slideList)
         })
         .catch((response) => {
           console.log(response)

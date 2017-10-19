@@ -3,7 +3,7 @@
 		<div class="list-wrap">
 			<ul class="list">
 				<li v-for="list in recomList" class="list-items">
-					<router-link :to="list.cmdId" class="item">
+					<router-link :to="{path:'/detail', query: { id: list.cmdId }}" class="item">
 						<div class="item-desc">
 							<div class="img-wrap">
 								<img v-lazy="list.picURL" class="inner-img">
@@ -28,11 +28,11 @@
 </template>
 
 <script>
-module.exports = {
+export default {
   data: function () {
     return {
       recomList: [],
-      apiUrl: '/homerecom'
+      apiUrl: this.$api + '/homepage/serials/recommend/'
     }
   },
   mounted: function () {

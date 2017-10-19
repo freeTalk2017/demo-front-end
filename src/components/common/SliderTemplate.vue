@@ -1,7 +1,7 @@
 <template id="slider-template">
   <div ref="swipe" class="wipe bar-slider">
     <div class='swipe-wrap'>
-        <div v-for="item in slideList">
+        <div v-for="item in tempList">
           <router-link v-if="type === 'redi'" :to="item.clickURL">
             <img :src="item.picURL" >
           </router-link>
@@ -24,40 +24,50 @@ export default {
   props: ['slideList', 'auto', 'loop', 'type'],
   data: function () {
     return {
-      mySwipe: {}
+      mySwipe: {},
+      tempList: []
     }
   },
-  mounted: function () {
-    var self = this
-    var slides = self.$refs.swipe.getElementsByClassName('swipe-pagination-switch')
-    // slides[0].style.opacity = '0.8'
-    // slides[0].style.background = '#b2b2b2'
-    // slides[0].style.width = '0.53333rem'
-    // slides[0].style.borderRadius = '15%'
-    self.mySwipe = new Swipe(self.$refs.swipe, {
-      startSlide: 0,
-      continuous: this.loop,
-      speed: speed,
-      auto: this.auto,
-      stopPropagation: false,
-      callback: function (index, elem) {
-        for (var i = 0; i < slides.length; i++) {
-          if (i !== index) {
-            slides[i].style.opacity = '0.5'
-            slides[i].style.background = '#ffffff'
-            slides[i].style.width = '0.13333rem'
-            slides[i].style.borderRadius = '100%'
-          } else {
-            slides[index].style.opacity = '0.8'
-            slides[index].style.background = '#b2b2b2'
-            slides[index].style.width = '0.53333rem'
-            slides[index].style.borderRadius = '15%'
-          }
-        }
-      }
-    })
+  watch: {
+    'slideList': function (val, oldVal) {
+      var _self = this
+      _self.tempList = val
+      _self.$nextTick(function () {
+        _self.creatSlide()
+      })
+    }
   },
   methods: {
+    creatSlide: function () {
+      var self = this
+      var slides = self.$refs.swipe.getElementsByClassName('swipe-pagination-switch')
+      slides[0].style.opacity = '0.8'
+      slides[0].style.background = '#b2b2b2'
+      slides[0].style.width = '0.53333rem'
+      slides[0].style.borderRadius = '15%'
+      self.mySwipe = new Swipe(self.$refs.swipe, {
+        startSlide: 0,
+        continuous: this.loop,
+        speed: speed,
+        auto: this.auto,
+        stopPropagation: false,
+        callback: function (index, elem) {
+          for (var i = 0; i < slides.length; i++) {
+            if (i !== index) {
+              slides[i].style.opacity = '0.5'
+              slides[i].style.background = '#ffffff'
+              slides[i].style.width = '0.13333rem'
+              slides[i].style.borderRadius = '100%'
+            } else {
+              slides[index].style.opacity = '0.8'
+              slides[index].style.background = '#b2b2b2'
+              slides[index].style.width = '0.53333rem'
+              slides[index].style.borderRadius = '15%'
+            }
+          }
+        }
+      })
+    },
     slideToCur: function (index) {
       var self = this
       self.mySwipe.slide(index, speed)

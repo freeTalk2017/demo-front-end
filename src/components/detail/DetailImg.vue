@@ -11,26 +11,22 @@
 module.exports = {
   data: function () {
     return {
-      imgList: [
-        {
-          picURL: 'https://dummyimage.com/980x980/3f51b5/ffffff'
-        },
-        {
-          picURL: 'https://dummyimage.com/980x490/9c27b0/ffffff'
-        },
-        {
-          picURL: 'https://dummyimage.com/980x245/f44336/ffffff'
-        },
-        {
-          picURL: 'https://dummyimage.com/490x490/cddc39/ffffff'
-        },
-        {
-          picURL: 'https://dummyimage.com/200x100/607d8b/ffffff'
-        },
-        {
-          picURL: 'https://dummyimage.com/1000x2000/00bcd4/ffffff'
-        }
-      ]
+      imgList: '',
+      apiUrl: this.$api + '/detail/description/' + this.$route.query.id
+    }
+  },
+  mounted: function () {
+    this.getImgList()
+  },
+  methods: {
+    getImgList: function () {
+      this.$http.get(this.apiUrl)
+        .then((response) => {
+          this.imgList = response.data
+        })
+        .catch((response) => {
+          console.log(response)
+        })
     }
   }
 }

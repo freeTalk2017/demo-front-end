@@ -12,9 +12,9 @@
 		<div class="list-wrap">
 			<ul class="list">
 				<li v-for="list in bestSaleList" class="list-items">
-					<a :href="list.clickUrl">
+					<router-link :to="{path:'/detail', query: { id: list.cmdId }}">
 						<img :src="list.image" class="inner-img">
-					</a>
+					</router-link>
 				</li>
 			</ul>
 		</div>	
