@@ -9,17 +9,22 @@ import noswipeSlider from '@/components/common/SliderTemplate'
 export default {
   data: function () {
     return {
-      slideList: [
-        {
-          'picURL': 'https://dummyimage.com/980x980/54bff0/ffffff'
-        },
-        {
-          'picURL': 'https://dummyimage.com/980x980/ffa273/ffffff'
-        },
-        {
-          'picURL': 'https://dummyimage.com/980x980/89d68e/ffffff'
-        }
-      ]
+      slideList: [],
+      apiUrl: this.$api + '/detail/display/' + this.$route.query.id
+    }
+  },
+  mounted: function () {
+    this.getSlideList()
+  },
+  methods: {
+    getSlideList: function () {
+      this.$http.get(this.apiUrl)
+        .then((response) => {
+          this.slideList = response.data
+        })
+        .catch((response) => {
+          console.log(response)
+        })
     }
   },
   components: {noswipeSlider}

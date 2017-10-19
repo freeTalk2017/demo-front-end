@@ -3,8 +3,8 @@
 		<div class="name-wrap">{{name}}</div>
 		<div class="desc-wrap">{{desc}}</div>
 		<div class="price-group">
-			<div class="price-wrap">¥{{price}}</div>
-			<div v-if="originPrice !== -1" class="origin-wrap">¥{{originPrice}}</div>
+			<div class="price-wrap">{{price}}</div>
+			<div v-if="originPrice !== ''" class="origin-wrap">{{originPrice}}</div>
 		</div>		
 	</div>
 </template>
@@ -13,10 +13,30 @@
 export default {
   data: function () {
     return {
-      name: '名字名字我是名字',
-      desc: '描述描述我是描述',
-      price: 998.00,
-      originPrice: 233.33
+      name: '',
+      desc: '',
+      price: '',
+      originPrice: '',
+      apiUrl: this.$api + '/detail/commodity/' + this.$route.query.id
+    }
+  },
+  mounted: function () {
+    this.getBasicInfo()
+  },
+  methods: {
+    getBasicInfo: function () {
+      this.$http.get(this.apiUrl)
+        .then((response) => {
+          this.name = response.data.name
+          this.desc = response.data.desc
+          this.price = '¥' + response.data.price
+          if (response.data.originPrice) {
+            this.originPrice = '¥' + response.data.originPrice
+          }
+        })
+        .catch((response) => {
+          console.log(response)
+        })
     }
   }
 }
