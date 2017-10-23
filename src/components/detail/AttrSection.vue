@@ -1,5 +1,5 @@
 <template>
-	<div v-if="attrList !== null ">
+	<div v-if="attrList.length !== 0 ">
 		<div class="div-wrap attr-wrap">
 			<div class="attr-head">
 				商品参数
@@ -32,7 +32,6 @@ module.exports = {
       this.$http.get(this.apiUrl)
         .then((response) => {
           this.attrList = response.data
-          console.log(response.data)
         })
         .catch((response) => {
           console.log(response)
