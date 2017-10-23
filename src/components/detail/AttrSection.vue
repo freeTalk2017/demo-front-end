@@ -1,41 +1,42 @@
-<template v-if="attrList">
-	<div class="div-wrap attr-wrap">
-		<div class="attr-head">
-			商品参数
-		</div>
-		<div v-for="attr in attrList" class="attr-list">
-			<div class="attr-title">
-				{{attr.attrTitle}}
+<template>
+	<div v-if="attrList !== null ">
+		<div class="div-wrap attr-wrap">
+			<div class="attr-head">
+				商品参数
 			</div>
-			<div class="attr-info">
-				{{attr.attrInfo}}
+			<div v-for="attr in attrList" class="attr-list">
+				<div class="attr-title">
+					{{attr.attrTitle}}
+				</div>
+				<div class="attr-info">
+					{{attr.attrInfo}}
+				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </template>
 
 <script>
 module.exports = {
   data: function () {
     return {
-      attrList: [
-        {
-          attrTitle: 'title1',
-          attrInfo: '详细参数1'
-        },
-        {
-          attrTitle: 'title2title2title2title2',
-          attrInfo: '详细参数2'
-        },
-        {
-          attrTitle: 'title3',
-          attrInfo: '详细参数3'
-        },
-        {
-          attrTitle: 'title4',
-          attrInfo: '详细参数4详细参数详细参数详细4参数详4细参数4详细'
-        }
-      ]
+      attrList: null,
+      apiUrl: this.$api + '/detail/param/' + this.$route.query.id
+    }
+  },
+  mounted: function () {
+    this.getAttrList()
+  },
+  methods: {
+    getAttrList: function () {
+      this.$http.get(this.apiUrl)
+        .then((response) => {
+          this.attrList = response.data
+          console.log(response.data)
+        })
+        .catch((response) => {
+          console.log(response)
+        })
     }
   }
 }
