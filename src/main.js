@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueLazyload)
 Vue.use(VueResource)
-Vue.prototype.$api = process.env.NODE_ENV === 'production' ? 'http://59.110.240.8/Goal' : '/api'
+Vue.prototype.$api = process.env.NODE_ENV === 'production' ? 'http://59.110.240.8:8888/Goal' : '/api'
 
 /* eslint-disable no-new */
 new Vue({
