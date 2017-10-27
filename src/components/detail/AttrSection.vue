@@ -20,7 +20,7 @@
 module.exports = {
   data: function () {
     return {
-      attrList: null,
+      attrList: [],
       apiUrl: this.$api + '/detail/param/' + this.$route.query.id
     }
   },
