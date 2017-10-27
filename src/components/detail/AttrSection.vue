@@ -1,5 +1,5 @@
 <template>
-	<div v-if="attrList.length !== 0 ">
+	<div v-if="attrList.length !== 0">
 		<div class="div-wrap attr-wrap">
 			<div class="attr-head">
 				商品参数
