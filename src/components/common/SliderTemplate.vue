@@ -17,7 +17,7 @@
 
 <script>
 var Swipe = require('swipe-js')
-var speed = 800
+var speed = 300
 
 export default {
   name: 'pagination-swipe',
