@@ -12,6 +12,8 @@
     <router-view name="DetailFooter"></router-view>
     <router-view name="AttrSection"></router-view>
     <router-view name="DetailImg"></router-view>
+    <router-view name="AddrSelection"></router-view>
+    <router-view name="CommList"></router-view>
     <router-view name="ToTop"></router-view>
   </div>
 </template>
@@ -56,8 +58,27 @@ export default {
   height: .53333rem;
 }
 
+.bar-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.21333rem;
+  margin: auto;
+  background-image: url(./assets/common/arrow-right.png);
+}
+
 .left-padding {
   padding-left: 0.4rem;
+}
+
+.font-size-general {
+  font-size: .37333rem;
+}
+
+.text-no-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 ul {

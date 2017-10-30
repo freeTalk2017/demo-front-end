@@ -33,6 +33,14 @@ export default new Router({
         DetailImg: resolve => { require(['@/components/detail/DetailImg'], resolve) },
         ToTop
       }
+    },
+    {
+      path: '/order/confirm',
+      components: {
+        AddrSelection: resolve => { require(['@/components/order/orderconfirm/AddrSelection'], resolve) },
+        CommList: resolve => { require(['@/components/order/orderconfirm/CommList'], resolve) },
+        ToTop
+      }
     }
   ]
 })
