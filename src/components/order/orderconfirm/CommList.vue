@@ -8,7 +8,7 @@
 				<div class="content-wrap">
 					<p class="name-info">{{item.name}}</p>
 					<p class="spec-info">{{item.specific}}</p>
-					<p class="price-info">{{item.price}}</p>
+					<p class="price-info price">¥{{item.price}}</p>
 				</div>
 				<div class="quantity-wrap">
 					<span >{{item.quantity}}</span>
@@ -27,14 +27,14 @@ export default {
           picURL: 'https://dummyimage.com/183x183/54bff0/ffffff',
           name: '商品名称八心八箭九心九箭十心十箭为所欲为',
           specific: '白色； 10克拉',
-          price: '¥98.88',
+          price: '98.88',
           quantity: 'x1'
         },
         {
           picURL: 'https://dummyimage.com/183x183/ffa273/ffffff',
           name: '商品名称',
           specific: '亚克力； 30W',
-          price: '¥28888',
+          price: '28888',
           quantity: 'x3'
         }
       ]
@@ -47,6 +47,8 @@ export default {
 .item-wrap {
 	text-align: left;
 	padding: .26667rem .4rem;
+	display: flex;
+	justify-content: space-around;
 }
 
 p {
@@ -54,7 +56,7 @@ p {
 }
 
 .item-line:after {
-	content: '';
+    content: '';
     position: absolute;
     background-color: #d9d9d9;
     left: 0;
@@ -74,12 +76,11 @@ p {
 
 .price-info {
 	margin-top: 0.48rem;
-  	color: #c12026;
-  	font-weight: 700;
 }
 
 .content-wrap {
 	overflow: hidden;
+	width: 6.124rem;
 }
 
 .img-wrap {
@@ -95,7 +96,6 @@ p {
 }
 
 .quantity-info {
-	position: absolute;
-	right: 0.21333rem;
+
 }
 </style>
