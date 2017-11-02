@@ -39,7 +39,11 @@ export default new Router({
       components: {
         AddrSelection: resolve => { require(['@/components/order/orderconfirm/AddrSelection'], resolve) },
         CommList: resolve => { require(['@/components/order/orderconfirm/CommList'], resolve) },
-        ToTop
+        DisCoupon: resolve => { require(['@/components/order/orderconfirm/DisCoupon'], resolve) },
+        Invoice: resolve => { require(['@/components/order/orderconfirm/Invoice'], resolve) },
+        DeliveryMethod: resolve => { require(['@/components/order/orderconfirm/DeliveryMethod'], resolve) },
+        InputComment: resolve => { require(['@/components/order/orderconfirm/InputComment'], resolve) },
+        ConfirmFooter: resolve => { require(['@/components/order/orderconfirm/ConfirmFooter'], resolve) }
       }
     }
   ]

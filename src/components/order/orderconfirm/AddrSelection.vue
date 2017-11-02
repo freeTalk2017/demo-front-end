@@ -1,6 +1,6 @@
 <template>
 	<div class="div-wrap addr-items font-size-general">
-		<div class="info-wrap">
+		<div class="padding-row-general">
 			<div class="left">
 				<p class="name-info text-no-overflow">{{name}}</p>
 				<i class="bar-icon bar-addr"></i>
@@ -51,10 +51,6 @@ export default {
 .addr-items {
 	text-align: left;
 	position: relative;
-}
-
-.info-wrap {
-	padding: .53333rem 1.14667rem .53333rem .4rem;
 }
 
 .left {
