@@ -108,7 +108,7 @@ export default {
 .pagination {
   text-align: center;
   position: relative;
-  bottom: .4rem;
+  bottom: .7rem;
   cursor: pointer;
 }
 .swipe-pagination-switch {
