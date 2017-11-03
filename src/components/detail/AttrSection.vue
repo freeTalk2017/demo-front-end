@@ -54,7 +54,7 @@ module.exports = {
 
 .attr-list {
 	display: flex;
-	border-top: dashed #e2e2e2;
+	border-top: .0233rem dashed #e2e2e2;
 	font-size: .32rem;
 	padding: .13333rem .4rem.13333rem 0;
 }
