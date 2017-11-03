@@ -46,5 +46,12 @@ export default new Router({
         ConfirmFooter: resolve => { require(['@/components/order/orderconfirm/ConfirmFooter'], resolve) }
       }
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
