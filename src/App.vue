@@ -20,6 +20,7 @@
     <router-view name="InputComment"></router-view>
     <router-view name="ConfirmFooter"></router-view>
     <router-view name="ToTop"></router-view>
+    <router-view name="Payment"></router-view>
   </div>
 </template>
 
