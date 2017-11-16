@@ -45,6 +45,12 @@ export default new Router({
         InputComment: resolve => { require(['@/components/order/orderconfirm/InputComment'], resolve) },
         ConfirmFooter: resolve => { require(['@/components/order/orderconfirm/ConfirmFooter'], resolve) }
       }
+    },
+    {
+      path: '/trade',
+      components: {
+        Payment: resolve => { require(['@/components/trade/Payment'], resolve) }
+      }
     }
   ],
   scrollBehavior (to, from, savedPosition) {
