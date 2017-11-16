@@ -17,7 +17,7 @@
 
 <script>
 var Swipe = require('swipe-js')
-var speed = 800
+var speed = 300
 
 export default {
   name: 'pagination-swipe',
@@ -108,7 +108,7 @@ export default {
 .pagination {
   text-align: center;
   position: relative;
-  bottom: .4rem;
+  bottom: .7rem;
   cursor: pointer;
 }
 .swipe-pagination-switch {

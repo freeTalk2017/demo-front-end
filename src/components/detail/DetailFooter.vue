@@ -1,5 +1,5 @@
 <template>
-	<div class="g-foot">
+	<div class="fixed-foot g-foot">
 		<router-link class="bar" to="/">
 			<i class="bar-icon bar-serv"></i>
 			<span class="txt">客服</span>
@@ -11,7 +11,7 @@
 		<router-link class="trad-wrap to-cart-wrap" to="/">
 			加入购物车
 		</router-link>
-		<router-link class="trad-wrap buy-wrap" to="/">
+		<router-link class="trad-wrap buy-wrap" to="/order/confirm">
 			立即购买
 		</router-link>
 	</div>
@@ -19,19 +19,7 @@
 
 <style scoped>
 .g-foot {
-	position: relative;
-	justify-content: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: flex;
-	position: fixed;
-	left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1.30667rem;
-    background-color: #fafafa;
-    border-top: 1px solid #d9d9d9;
-    align-content: flex-start;
+	height: 1.30667rem;
 }
 
 .bar {

@@ -12,7 +12,15 @@
     <router-view name="DetailFooter"></router-view>
     <router-view name="AttrSection"></router-view>
     <router-view name="DetailImg"></router-view>
+    <router-view name="AddrSelection"></router-view>
+    <router-view name="CommList"></router-view>
+    <router-view name="DisCoupon"></router-view>
+    <router-view name="Invoice"></router-view>
+    <router-view name="DeliveryMethod"></router-view>
+    <router-view name="InputComment"></router-view>
+    <router-view name="ConfirmFooter"></router-view>
     <router-view name="ToTop"></router-view>
+    <router-view name="Payment"></router-view>
   </div>
 </template>
 
@@ -40,6 +48,21 @@ export default {
   z-index: 5;
 }
 
+.fixed-foot {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fafafa;
+  border-top: 1px solid #d9d9d9;
+  align-content: flex-start;
+}
+
 .inner-img {
   display: block;
   width: 100%;
@@ -56,8 +79,66 @@ export default {
   height: .53333rem;
 }
 
+.bar-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.21333rem;
+  margin: auto;
+  background-image: url(./assets/common/arrow-right.png);
+}
+
 .left-padding {
   padding-left: 0.4rem;
+}
+
+.font-size-general {
+  font-size: .37333rem;
+}
+
+.padding-row-general {
+  padding: .53333rem 1.14667rem .53333rem .4rem;
+}
+
+.inner-row-general {
+  padding: .53333rem 1.14667rem .53333rem .4rem;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.inner-row-general .left {
+  position: relative;
+  float: left;
+  margin: 0;
+}
+
+.inner-row-general .middle{
+  overflow: hidden;
+  text-align: right;
+}
+
+.no-arrow {
+  padding-right: .4rem;
+}
+
+.inner-row-wrap:after {
+  content: '';
+  position: absolute;
+  background-color: #d9d9d9;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.text-no-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.price {
+  color: #c12026;
+  font-weight: 700;
 }
 
 ul {
@@ -73,6 +154,30 @@ body {
   margin: 0;
   background-color: #f4f4f4;
   word-break: break-word;
+}
+
+input {
+  border: none;
+  font-size: .37333rem;
+  width: 100%;
+  outline: 0;
+  color: #999;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+}
+
+:-moz-placeholder {
+  color: #999;
+}
+
+::-moz-placeholder {
+  color: #999;
+}
+
+:-ms-input-placeholder{
+  color: #999;
 }
 
 .div-wrap {

@@ -33,6 +33,31 @@ export default new Router({
         DetailImg: resolve => { require(['@/components/detail/DetailImg'], resolve) },
         ToTop
       }
+    },
+    {
+      path: '/order/confirm',
+      components: {
+        AddrSelection: resolve => { require(['@/components/order/orderconfirm/AddrSelection'], resolve) },
+        CommList: resolve => { require(['@/components/order/orderconfirm/CommList'], resolve) },
+        DisCoupon: resolve => { require(['@/components/order/orderconfirm/DisCoupon'], resolve) },
+        Invoice: resolve => { require(['@/components/order/orderconfirm/Invoice'], resolve) },
+        DeliveryMethod: resolve => { require(['@/components/order/orderconfirm/DeliveryMethod'], resolve) },
+        InputComment: resolve => { require(['@/components/order/orderconfirm/InputComment'], resolve) },
+        ConfirmFooter: resolve => { require(['@/components/order/orderconfirm/ConfirmFooter'], resolve) }
+      }
+    },
+    {
+      path: '/trade',
+      components: {
+        Payment: resolve => { require(['@/components/trade/Payment'], resolve) }
+      }
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })

@@ -1,5 +1,5 @@
 <template>
-	<div v-if="attrList.length !== 0 ">
+	<div v-if="attrList.length !== 0">
 		<div class="div-wrap attr-wrap">
 			<div class="attr-head">
 				商品参数
@@ -20,7 +20,7 @@
 module.exports = {
   data: function () {
     return {
-      attrList: null,
+      attrList: [],
       apiUrl: this.$api + '/detail/param/' + this.$route.query.id
     }
   },
@@ -54,7 +54,7 @@ module.exports = {
 
 .attr-list {
 	display: flex;
-	border-top: dashed #e2e2e2;
+	border-top: .0233rem dashed #e2e2e2;
 	font-size: .32rem;
 	padding: .13333rem .4rem.13333rem 0;
 }

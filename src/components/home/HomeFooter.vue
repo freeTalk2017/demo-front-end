@@ -1,5 +1,5 @@
 <template>
-	<nav class="m-foot">
+	<nav class="fixed-foot m-foot">
 		<router-link class="bar active" to="/">
 			<i class="bar-icon bar-index"></i>
 			<span class="txt">首页</span>
@@ -17,21 +17,9 @@
 
 <style scoped>
 .m-foot {
-	position: relative;
-	justify-content: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: flex;
-	position: fixed;
-	left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1.30667rem;
-    background-color: #fafafa;
-    border-top: 1px solid #d9d9d9;
-    justify-content: space-around;
-    -webkit-justify-content: space-around;
-    align-content: flex-start;
+	height: 1.30667rem;
+	justify-content: space-around;
+	-webkit-justify-content: space-around;
 }
 
 .bar {
