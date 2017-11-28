@@ -8,7 +8,7 @@
 			<i class="bar-icon bar-cart"></i>
 			<span class="txt">购物车</span>
 		</router-link>
-		<router-link class="bar" to="/">
+		<router-link class="bar" to="/trade">
 			<i class="bar-icon bar-mine"></i>
 			<span class="txt">我的</span>
 		</router-link>
