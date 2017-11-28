@@ -18,6 +18,21 @@ export default {
     callpay: function () {
       this.$http.get('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http://www.makeiteasy.xin/trade/wxpay&response_type=code&scope=snsapi_base#wechat_redirect').then((response) => {
         console.log(response)
+        WeixinJSBridge.invoke(
+          'getBrandWCPayRequest', {
+            'appId': response.data.appId,
+            'timeStamp': response.data.timeStamp,
+            'nonceStr': response.data.nonceStr,
+            'package': response.data.package,
+            'signType': response.data.signType,
+            'paySign': response.data.paySign
+          },
+       function (res) {
+         if (res.err_msg === 'get_brand_wcpay_request:ok') {
+           console.log('right')
+         }
+       }
+        )
       })
     }
   }
