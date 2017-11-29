@@ -16,14 +16,16 @@ export default {
   },
   methods: {
     callpay: function () {
-      this.$http.get('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http://www.makeiteasy.xin/trade/wxpay&response_type=code&scope=snsapi_base#wechat_redirect').then((response) => {
+      this.$http.get('/wx_auth/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http://www.makeiteasy.xin/trade/wxpay&response_type=code&scope=snsapi_base#wechat_redirect').then((response) => {
         console.log(response)
+        /* eslint-disable*/
         WeixinJSBridge.invoke(
+        /* eslint-enable */
           'getBrandWCPayRequest', {
             'appId': response.data.appId,
             'timeStamp': response.data.timeStamp,
             'nonceStr': response.data.nonceStr,
-            'package': response.data.package,
+            'package': response.data.package_pre,
             'signType': response.data.signType,
             'paySign': response.data.paySign
           },
