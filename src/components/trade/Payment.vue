@@ -9,7 +9,7 @@ export default {
   data: function () {
     return {
       slideList: [],
-      apiUrl: this.$api + '/homepage/serials/sliders'
+      apiUrl: this.$api + '/trade/code'
     }
   },
   mounted: function () {
@@ -39,7 +39,7 @@ export default {
       })
     },
     callwxpay: function () {
-      this.$http.get('/apis/Goal/trade/code').then((response) => {
+      this.$http.get(this.apiUrl).then((response) => {
         console.log(response)
         /* eslint-disable*/
         WeixinJSBridge.invoke(
