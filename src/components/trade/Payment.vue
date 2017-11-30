@@ -39,7 +39,7 @@ export default {
       })
     },
     callwxpay: function () {
-      this.$http.get('/apis/trade/code').then((response) => {
+      this.$http.get('/apis/Goal/trade/code').then((response) => {
         console.log(response)
         /* eslint-disable*/
         WeixinJSBridge.invoke(
