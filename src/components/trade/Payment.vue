@@ -38,7 +38,7 @@ export default {
         )
       })
     },
-    callpaynew: function{
+    callpaynew: function () {
       top.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc7f83b1938b89316&redirect_uri=http://www.makeiteasy.xin/apis/Goal/trade/check&response_type=code&scope=snsapi_base#wechat_redirect'
     },
     callwxpay: function () {
