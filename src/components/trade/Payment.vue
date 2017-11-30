@@ -1,6 +1,6 @@
 <template>
 	<div class="pay-wrap">
-		<input class="pay-wrap" type="submit" value="点击支付" @click="callpay">
+		<input class="pay-wrap" type="submit" value="点击支付" @click="callpaynew">
     <input class="pay-wrap" type="submit" value="点击支付2" @click="callwxpay">
 	</div>
 </template>
@@ -37,6 +37,9 @@ export default {
        }
         )
       })
+    },
+    callpaynew: function{
+      top.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc7f83b1938b89316&redirect_uri=http://www.makeiteasy.xin/apis/Goal/trade/check&response_type=code&scope=snsapi_base#wechat_redirect'
     },
     callwxpay: function () {
       this.$http.get(this.apiUrl).then((response) => {
