@@ -9,9 +9,9 @@
 				<span>¥{{amount}}</span>
 			</span>
 		</div>
-		<router-link class="trad-wrap buy-wrap" to="/">
+		<div class="trad-wrap buy-wrap" @click="generateOrder()">
 			去付款
-		</router-link>
+		</div>
 	</div>
 </template>
 
@@ -20,7 +20,24 @@ export default {
   data: function () {
     return {
       quantity: 4,
-      amount: 998
+      amount: 998,
+      orderId: '',
+      apiUrl: this.$api + '/orders/orderConfirmation/' 
+    }
+  },
+  methods: {
+    generateOrder: function () {
+      this.$http.get(this.apiUrl)
+        .then((response) => {
+          this.orderId = response.data
+          this.callPay()
+        })
+        .catch((response) => {
+          console.log(response)
+        })
+    },
+    callPay: function () {
+      top.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http://www.makeiteasy.xin/trade/check&response_type=code&scope=snsapi_base&state=' + this.orderId +'#wechat_redirect'
     }
   }
 }
