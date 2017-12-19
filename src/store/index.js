@@ -9,6 +9,10 @@ export default new Vuex.Store({
     orderQuantity: 0
   },
   mutations: {
+    CLEAR_CATCH (state) {
+      state.orderTotalPrice = 0
+      state.orderQuantity = 0
+    },
     INCREMENT_PRICE (state, price) {
       state.orderTotalPrice += price
     },
