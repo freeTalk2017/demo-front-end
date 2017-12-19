@@ -9,7 +9,7 @@
 				¥{{$store.state.orderTotalPrice}}
 			</span>
 		</div>
-		<div class="trad-wrap buy-wrap" @click="generateOrder()">
+		<div class="trad-wrap buy-wrap" @click="callPay()">
 			去付款
 		</div>
 	</div>
@@ -35,7 +35,8 @@ export default {
         })
     },
     callPay: function () {
-      top.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http://www.makeiteasy.xin/trade/check&response_type=code&scope=snsapi_base&state=' + this.orderId + '#wechat_redirect'
+      // top.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http://www.makeiteasy.xin/trade/check&response_type=code&scope=snsapi_base&state=' + this.orderId + '#wechat_redirect'
+      top.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http://www.makeiteasy.xin/trade/check&response_type=code&scope=snsapi_base#wechat_redirect'
     }
   }
 }
