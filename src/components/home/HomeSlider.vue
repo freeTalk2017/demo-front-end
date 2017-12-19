@@ -35,6 +35,5 @@ export default {
 .home-slider-wrap {
 	height: 5.33333rem;
 	width: 100%;
-	background-color: #fff;
 }
 </style>

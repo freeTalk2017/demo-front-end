@@ -31,6 +31,7 @@ export default new Router({
         SpecificSelection: resolve => { require(['@/components/detail/SpecificSelection'], resolve) },
         AttrSection: resolve => { require(['@/components/detail/AttrSection'], resolve) },
         DetailImg: resolve => { require(['@/components/detail/DetailImg'], resolve) },
+        SkuCover: resolve => { require(['@/components/detail/SkuCover'], resolve) },
         ToTop
       }
     },

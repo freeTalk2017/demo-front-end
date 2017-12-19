@@ -10,6 +10,7 @@
     <router-view name="DetailBasic"></router-view>
     <router-view name="SpecificSelection"></router-view>
     <router-view name="DetailFooter"></router-view>
+    <router-view name="SkuCover"></router-view>
     <router-view name="AttrSection"></router-view>
     <router-view name="DetailImg"></router-view>
     <router-view name="AddrSelection"></router-view>
