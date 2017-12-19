@@ -2,11 +2,11 @@
 	<div class="fixed-foot o-foot">
 		<div class="left-padding font-size-general">
 			<span>共</span>
-			<span class="price">{{quantity}}</span>
+			<span class="price">{{$store.state.orderQuantity}}</span>
 			<span>件,</span>
 			<span>应付:</span>
 			<span class="price">
-				<span>¥{{amount}}</span>
+				¥{{$store.state.orderTotalPrice}}
 			</span>
 		</div>
 		<router-link class="trad-wrap buy-wrap" to="/">
@@ -19,8 +19,6 @@
 export default {
   data: function () {
     return {
-      quantity: 4,
-      amount: 998
     }
   }
 }

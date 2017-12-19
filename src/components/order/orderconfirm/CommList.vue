@@ -11,7 +11,7 @@
 					<p class="price-info price">¥{{item.price}}</p>
 				</div>
 				<div class="quantity-wrap">
-					<span >{{item.quantity}}</span>
+					<span>x{{item.quantity}}</span>
 				</div>
 			</div>
 		</div>
@@ -28,17 +28,23 @@ export default {
           name: '商品名称八心八箭九心九箭十心十箭为所欲为',
           specific: '白色； 10克拉',
           price: '98.88',
-          quantity: 'x1'
+          quantity: '1'
         },
         {
           picURL: 'https://dummyimage.com/183x183/ffa273/ffffff',
           name: '商品名称',
           specific: '亚克力； 30W',
           price: '28888',
-          quantity: 'x3'
+          quantity: '3'
         }
       ]
     }
+  },
+  mounted () {
+    this.list.forEach((value, index, array) => {
+      this.$store.commit('INCREMENT_PRICE', Number(array[index].price))
+      this.$store.commit('INCREMENT_QUANTITY', Number(array[index].quantity))
+    })
   }
 }
 </script>

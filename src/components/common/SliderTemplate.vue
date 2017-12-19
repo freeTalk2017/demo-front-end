@@ -1,11 +1,11 @@
 <template id="slider-template">
   <div ref="swipe" class="wipe bar-slider">
-    <div class='swipe-wrap'>
+    <div class="swipe-wrap">
         <div v-for="item in tempList">
           <router-link v-if="type === 'redi'" :to="item.clickURL">
-            <img :src="item.picURL" >
+            <img :src="item.picURL">
           </router-link>
-          <img v-else :src="item.picURL" >
+          <img v-else :src="item.picURL">
         </div>
     </div>
 
