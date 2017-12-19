@@ -41,6 +41,7 @@ export default {
     }
   },
   mounted () {
+    this.$store.commit('CLEAR_CATCH')
     this.list.forEach((value, index, array) => {
       this.$store.commit('INCREMENT_PRICE', Number(array[index].price))
       this.$store.commit('INCREMENT_QUANTITY', Number(array[index].quantity))
