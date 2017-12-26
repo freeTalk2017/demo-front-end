@@ -9,9 +9,9 @@
 				¥{{$store.state.orderTotalPrice}}
 			</span>
 		</div>
-		<div class="trad-wrap buy-wrap" @click="callPay()">
+		<a id="topay" class="trad-wrap buy-wrap" @click="generateOrder()">
 			去付款
-		</div>
+		</a>
 	</div>
 </template>
 
@@ -20,22 +20,55 @@ export default {
   data: function () {
     return {
       orderId: '',
-      apiUrl: this.$api + '/orders/orderConfirmation/'
+      apiUrl: this.$api + '/orders/orderConfirmation/',
+      mockData: {
+        'userId': '123',
+        'deliveryWay': '2',
+        'orderCmdList': [
+          {
+            'cmdCount': '10',
+            'cmdId': '0411258d-029e-4634-ac7f-6b499ba05387',
+            'cmdSkuId': '123',
+            'skuPrice': '110'
+          }
+        ],
+        'orderAddress': {
+          'receiver': 'lee',
+          'telephone': '13438928131',
+          'province': 'sichuan',
+          'city': 'chengdu',
+          'street': 'yuanJingRoad',
+          'zipCode': '610000'
+        }
+      }
     }
   },
   methods: {
     generateOrder: function () {
-      this.$http.post(this.apiUrl)
-        .then((response) => {
-          this.orderId = response.data
-          this.callPay()
-        })
-        .catch((response) => {
-          console.log(response)
-        })
+      this.disablePay()
+      this.$http.post(
+        this.apiUrl,
+        JSON.stringify(this.mockData)
+      )
+      .then((response) => {
+        this.orderId = response.data.orderId
+        this.callPay()
+      })
+      .catch((response) => {
+        console.log('fail:' + response)
+        this.enablePay()
+      })
     },
     callPay: function () {
       top.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa1378048216955b0&redirect_uri=http%3A%2F%2Fwww.makeiteasy.xin%2Fapis%2FGoal%2Ftrade%2Fcheck&response_type=code&scope=snsapi_base&state=' + this.orderId + '#wechat_redirect'
+    },
+    disablePay: function () {
+      var toPay = document.getElementById('topay')
+      toPay.className += ' disabled'
+    },
+    enablePay: function () {
+      var toPay = document.getElementById('topay')
+      toPay.className = toPay.className.replace((new RegExp('(^|\\s)' + 'disabled' + '(\\s|$)')), '')
     }
   }
 }

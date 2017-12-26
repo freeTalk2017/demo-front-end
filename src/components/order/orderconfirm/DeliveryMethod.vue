@@ -12,3 +12,16 @@
 		</div>
 	</div>
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      mode: '2'
+    }
+  },
+  mounted: function () {
+    this.$store.commit('SET_ORDER_DELIVERY', this.mode)
+  }
+}
+</script>

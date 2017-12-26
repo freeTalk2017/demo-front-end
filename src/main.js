@@ -11,6 +11,10 @@ Vue.config.productionTip = false
 
 Vue.use(VueLazyload)
 Vue.use(VueResource)
+
+// Vue.http.options.emulateHTTP = true
+// Vue.http.options.emulateJSON = true
+
 Vue.prototype.$api = process.env.NODE_ENV === 'production' ? '/apis/Goal' : '/api'
 
 /* eslint-disable no-new */
