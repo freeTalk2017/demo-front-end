@@ -185,4 +185,10 @@ input {
   background-color: #ffffff;
 }
 
+.disabled {
+  pointer-events: none;
+  color: #fff;
+  background-color: #ccc!important;
+}
+
 </style>
